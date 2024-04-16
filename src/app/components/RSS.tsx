@@ -42,7 +42,7 @@ export default async function NoteRSS(props: NoteRSSProps) {
   return (
     <div>
       {items.map((item: { link: string; title: string; "media:thumbnail": string; pubDate: string }) => (
-        <div>
+        <div key={item.link}>
           <a href={item.link} target="_blank" rel="noopener noreferrer">
             <div className="relative aspect-square">
               <img alt="thumbnail" className="object-cover" src={item["media:thumbnail"]} />
